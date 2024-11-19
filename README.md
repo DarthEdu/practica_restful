@@ -1,4 +1,4 @@
-# practica_restful
+# Practica_APIRestFull
 # Integrantes
 - Ayala Martín
 - Diaz Dennis

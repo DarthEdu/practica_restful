@@ -69,7 +69,7 @@ const updateUserController = async(req, res)=> {
 const updateGeneradorController = async(req, res)=> {
     const {id} = req.params
     try {
-        const user = await GeneradorModel.updateGeneradorModel(id,req.body)
+        const user = await GeneradorModel.updaGeneradorModel(id,req.body)
         const status = user.error ? 404 : 200
         res.status(status).json(user)
     } catch (error) {
@@ -79,7 +79,7 @@ const updateGeneradorController = async(req, res)=> {
 const updatePedidoController = async(req, res)=> {
     const {id} = req.params
     try {
-        const user = await GeneradorModel.updatepedidoModel(id,req.body)
+        const user = await GeneradorModel.updatePedidoModel(id,req.body)
         const status = user.error ? 404 : 200
         res.status(status).json(user)
     } catch (error) {
@@ -88,12 +88,34 @@ const updatePedidoController = async(req, res)=> {
 }
 
 
-const deleteTourController = async(req, res)=> {
+const deleteUserController = async(req, res)=> {
     const {id} = req.params
     try {
-        const tour = await tourModel.deleteTourModel(id)
-        const status = tour.error ? 404 : 200
-        res.status(status).json(tour)
+        const user = await GeneradorModel.deleteUserID(id)
+        const status = user.error ? 404 : 200
+        res.status(status).json(user)
+    } catch (error) {
+        res.status(500).json(error)
+    }
+}
+
+const deleteGeneradorController = async(req, res)=> {
+    const {id} = req.params
+    try {
+        const generador = await GeneradorModel.deleteGeneradorID(id)
+        const status = generador.error ? 404 : 200
+        res.status(status).json(generador)
+    } catch (error) {
+        res.status(500).json(error)
+    }
+}
+
+const deletePedidoController = async(req, res)=> {
+    const {id} = req.params
+    try {
+        const pedido = await GeneradorModel.deletePedidoID(id)
+        const status = pedido.error ? 404 : 200
+        res.status(status).json(pedido)
     } catch (error) {
         res.status(500).json(error)
     }
@@ -107,7 +129,9 @@ export{
     updateUserController,
     updateGeneradorController,
     updatePedidoController,
-    deleteTourController,
     getGeneradorByIDController,
-    getPedidoByIDController 
+    getPedidoByIDController,
+    deleteGeneradorController,
+    deletePedidoController,
+    deleteUserController
 }

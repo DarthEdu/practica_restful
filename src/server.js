@@ -23,7 +23,7 @@ app.get('/',(req,res)=>{
 
 
 // Rutas 
-app.use('/api', router)
+app.use('/campos', router)
 
 
 // Manejo de una ruta que no sea encontrada

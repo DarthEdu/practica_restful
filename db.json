@@ -27,24 +27,24 @@
   ],
   "generador": [
     {
-      "id": "1",
-      "modelo": "Honda EU2200i",
-      "potencia": "2.2 kW",
-      "tipoCombustible": "Gasolina",
-      "estado": "Disponible",
-      "precioDia": 30,
-      "precioVenta": 700,
-      "ubicacion": "Bodega Quito"
-    },
-    {
-      "id": "2",
       "modelo": "Generac GP8000E",
       "potencia": "10 kW",
       "tipoCombustible": "Diésel",
       "estado": "En uso",
       "precioDia": 150,
-      "precioVenta": 1502,
-      "ubicacion": "Bodega Guayaquil"
+      "precioVenta": 15000,
+      "ubicacion": "Bodega Guayaquil",
+      "id": "1"
+    },
+    {
+      "modelo": "Generac GP8000E",
+      "potencia": "10 kW",
+      "tipoCombustible": "Diésel",
+      "estado": "En uso",
+      "precioDia": 150,
+      "precioVenta": 15000,
+      "ubicacion": "Bodega Guayaquil",
+      "id": "2"
     }
   ],
   "pedido": [

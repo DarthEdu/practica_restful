@@ -102,20 +102,52 @@ const GeneradorModel = {
         }
     },
 
-    async deleteTourModel (tourId) {
-        const url = `http://localhost:4000/tours/${tourId}`
+    async deleteUserID (userId) {
+        const url = `http://localhost:4000/cliente/${userId}`
         const response = await fetch(url)
         if (!response.ok) {
-            return {error:"Tour no encontrado"}
+            return {error:"Usuario no encontrado"}
         }
         else{
             const peticion = await fetch(url,{
                 method:'DELETE',
             })
             await peticion.json()
-            return {msg:"Tour eliminado correctamente"}
+            return {msg:"Usuario eliminado correctamente"}
+        }
+    },
+
+    async deleteGeneradorID (genId) {
+        const url = `http://localhost:4000/generador/${genId}`
+        const response = await fetch(url)
+        if (!response.ok) {
+            return {error:"Generador no encontrado"}
+        }
+        else{
+            const peticion = await fetch(url,{
+                method:'DELETE',
+            })
+            await peticion.json()
+            return {msg:"Generador eliminado correctamente"}
+        }
+    },
+
+    async deletePedidoID (pedId) {
+        const url = `http://localhost:4000/pedido/${pedId}`
+        const response = await fetch(url)
+        if (!response.ok) {
+            return {error:"Pedido no encontrado"}
+        }
+        else{
+            const peticion = await fetch(url,{
+                method:'DELETE',
+            })
+            await peticion.json()
+            return {msg:"Pedido eliminado correctamente"}
         }
     }
 }
+
+
 
 export default GeneradorModel

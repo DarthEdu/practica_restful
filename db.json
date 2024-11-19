@@ -1,0 +1,72 @@
+{
+  "cliente": [
+    {
+      "id": "1",
+      "tipoCliente": "Formal",
+      "nombre": "Juan Pérez Lazo",
+      "contacto": {
+        "telefono": "0987654322",
+        "email": "juan.perez@gmail.com",
+        "direccion": "Barrio San Juan, Cuenca"
+      },
+      "cedula": "0102034567",
+      "necesidadEnergetica": "5 kW"
+    },
+    {
+      "id": "2",
+      "tipoCliente": "Informal",
+      "nombre": "Juan Pérez",
+      "contacto": {
+        "telefono": "0987654321",
+        "email": "juan.perez@gmail.com",
+        "direccion": "Barrio San Juan, Cuenca"
+      },
+      "cedula": "0102034567",
+      "necesidadEnergetica": "5 kW"
+    }
+  ],
+  "generador": [
+    {
+      "id": "1",
+      "modelo": "Honda EU2200i",
+      "potencia": "2.2 kW",
+      "tipoCombustible": "Gasolina",
+      "estado": "Disponible",
+      "precioDia": 30,
+      "precioVenta": 700,
+      "ubicacion": "Bodega Quito"
+    },
+    {
+      "id": "2",
+      "modelo": "Generac GP8000E",
+      "potencia": "10 kW",
+      "tipoCombustible": "Diésel",
+      "estado": "En uso",
+      "precioDia": 150,
+      "precioVenta": 1502,
+      "ubicacion": "Bodega Guayaquil"
+    }
+  ],
+  "pedido": [
+    {
+      "id": "1",
+      "clienteId": "1",
+      "generadorId": "2",
+      "tipo": "Alquiler",
+      "fechaInicio": "2024-11-10",
+      "fechaFin": "2024-11-15",
+      "duracionDias": 5,
+      "costoTotal": 250,
+      "estado": "Activo"
+    },
+    {
+      "id": "2",
+      "clienteId": "2",
+      "generadorId": "1",
+      "tipo": "Venta",
+      "fechaInicio": "2024-11-19",
+      "costoTotal": 800,
+      "estado": "Finalizado"
+    }
+  ]
+}

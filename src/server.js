@@ -1,7 +1,8 @@
 // Requerir los módulos
 import express from 'express'
 import morgan from 'morgan'
-import router from './routers/generadorRouters.js'
+import routerGenerador from './routers/generadorRouters.js'
+import routerUser from './routers/userRouter.js'
 
 
 // Inicializaciones
@@ -23,7 +24,12 @@ app.get('/',(req,res)=>{
 
 
 // Rutas 
-app.use('/campos', router)
+
+//ruta generador
+app.use('/campos', routerGenerador)
+
+//ruta user
+app.use('/campos', routerUser)
 
 
 // Manejo de una ruta que no sea encontrada

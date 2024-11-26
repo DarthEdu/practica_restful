@@ -28,6 +28,12 @@
       "id": "0540a272-f033-4cd6-b5a8-fce010f02ad7",
       "name": "Mateo Bernal",
       "age": 21
+    },
+    {
+      "id": "16491f1c-15c9-4be6-9636-c9ff700e0b64",
+      "name": "Jose",
+      "city": "Quito",
+      "country": "EC"
     }
   ],
   "generador": [

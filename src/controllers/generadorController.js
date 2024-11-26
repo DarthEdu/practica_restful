@@ -22,18 +22,7 @@ const createGeneradorController = async(req, res)=> {
 }
 
 
-const createClienteController = async(req, res)=> {
-    const newClienteData = {
-        id:uuidv4(),
-        ...req.body
-    }
-    try {
-        const cliente = await GeneradorModel.createClienteModel(newClienteData)
-        res.status(201).json(cliente)
-    } catch (error) {
-        res.status(500).json(error)
-    }
-}
+
 
 const createPedidoController = async(req, res)=> {
     const newPedidoData = {
@@ -49,16 +38,7 @@ const createPedidoController = async(req, res)=> {
 }
 
 
-const getUserByIDController = async (req, res) => {
-    const {id} = req.params
-    try {
-        const user = await GeneradorModel.getUserById(id)
-        const status = user.error ? 404 : 200
-        res.status(status).json(user)
-    } catch (error) {
-        res.status(500).json(error)
-    }
-}
+
 
 const getGeneradorByIDController = async (req, res) => {
     const {id} = req.params
@@ -83,16 +63,6 @@ const getPedidoByIDController = async (req, res) => {
 }
 
 
-const updateUserController = async(req, res)=> {
-    const {id} = req.params
-    try {
-        const user = await GeneradorModel.updateUserModel(id,req.body)
-        const status = user.error ? 404 : 200
-        res.status(status).json(user)
-    } catch (error) {
-        res.status(500).json(error)
-    }
-}
 const updateGeneradorController = async(req, res)=> {
     const {id} = req.params
     try {
@@ -114,17 +84,6 @@ const updatePedidoController = async(req, res)=> {
     }
 }
 
-
-const deleteUserController = async(req, res)=> {
-    const {id} = req.params
-    try {
-        const user = await GeneradorModel.deleteUserID(id)
-        const status = user.error ? 404 : 200
-        res.status(status).json(user)
-    } catch (error) {
-        res.status(500).json(error)
-    }
-}
 
 const deleteGeneradorController = async(req, res)=> {
     const {id} = req.params
@@ -151,16 +110,12 @@ const deletePedidoController = async(req, res)=> {
 
 export{
     getAllGeneradorController,
-    getUserByIDController,
     createGeneradorController,
-    createClienteController,
     createPedidoController,
-    updateUserController,
     updateGeneradorController,
     updatePedidoController,
     getGeneradorByIDController,
     getPedidoByIDController,
     deleteGeneradorController,
     deletePedidoController,
-    deleteUserController
 }

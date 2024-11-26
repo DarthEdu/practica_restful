@@ -3,6 +3,7 @@ import express from 'express'
 import morgan from 'morgan'
 import routerGenerador from './routers/generadorRouters.js'
 import routerUser from './routers/userRouter.js'
+import route from './routers/pedidoRouter.js'
 
 
 // Inicializaciones
@@ -31,6 +32,8 @@ app.use('/campos', routerGenerador)
 //ruta user
 app.use('/campos', routerUser)
 
+//ruta pedidos
+app.use('/campos', route)
 
 // Manejo de una ruta que no sea encontrada
 app.use((req,res)=>res.status(404).send("Endpoint no encontrado - 404"))

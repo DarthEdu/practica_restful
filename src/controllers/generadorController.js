@@ -1,4 +1,3 @@
-
 import { v4 as uuidv4 }  from 'uuid'
 import GeneradorModel from '../models/generadorModel.js'
 
@@ -22,24 +21,6 @@ const createGeneradorController = async(req, res)=> {
 }
 
 
-
-
-const createPedidoController = async(req, res)=> {
-    const newPedidoData = {
-        id:uuidv4(),
-        ...req.body
-    }
-    try {
-        const pedido = await GeneradorModel.createPedidoModel(newPedidoData)
-        res.status(201).json(pedido)
-    } catch (error) {
-        res.status(500).json(error)
-    }
-}
-
-
-
-
 const getGeneradorByIDController = async (req, res) => {
     const {id} = req.params
     try {
@@ -51,16 +32,6 @@ const getGeneradorByIDController = async (req, res) => {
     }
 }
 
-const getPedidoByIDController = async (req, res) => {
-    const {id} = req.params
-    try {
-        const pedido = await GeneradorModel.getPedidoById(id)
-        const status = pedido.error ? 404 : 200
-        res.status(status).json(pedido)
-    } catch (error) {
-        res.status(500).json(error)
-    }
-}
 
 
 const updateGeneradorController = async(req, res)=> {
@@ -73,16 +44,7 @@ const updateGeneradorController = async(req, res)=> {
         res.status(500).json(error)
     }
 }
-const updatePedidoController = async(req, res)=> {
-    const {id} = req.params
-    try {
-        const user = await GeneradorModel.updatePedidoModel(id,req.body)
-        const status = user.error ? 404 : 200
-        res.status(status).json(user)
-    } catch (error) {
-        res.status(500).json(error)
-    }
-}
+
 
 
 const deleteGeneradorController = async(req, res)=> {
@@ -96,26 +58,11 @@ const deleteGeneradorController = async(req, res)=> {
     }
 }
 
-const deletePedidoController = async(req, res)=> {
-    const {id} = req.params
-    try {
-        const pedido = await GeneradorModel.deletePedidoID(id)
-        const status = pedido.error ? 404 : 200
-        res.status(status).json(pedido)
-    } catch (error) {
-        res.status(500).json(error)
-    }
-}
-
 
 export{
     getAllGeneradorController,
     createGeneradorController,
-    createPedidoController,
     updateGeneradorController,
-    updatePedidoController,
     getGeneradorByIDController,
-    getPedidoByIDController,
     deleteGeneradorController,
-    deletePedidoController,
 }

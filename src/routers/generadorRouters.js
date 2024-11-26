@@ -3,12 +3,8 @@ import {
   createGeneradorController,
   getAllGeneradorController,
   getGeneradorByIDController,
-  getPedidoByIDController,
   updateGeneradorController,
-  updatePedidoController,
   deleteGeneradorController,
-  deletePedidoController,
-  createPedidoController
 } from "../controllers/generadorController.js";
 
 import { verify } from "../middlewares/auth.js";

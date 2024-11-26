@@ -1,3 +1,5 @@
+
+
 const GeneradorModel = {
 
     async getAllGeneradorModel() {
@@ -44,6 +46,30 @@ const GeneradorModel = {
         const peticion = await fetch(url,{
             method:'POST',
             body: JSON.stringify(newGenerador),
+            headers: {'Content-Type':'application/json'}
+        })
+        const data = await peticion.json()
+        return data
+    },
+
+    async createClienteModel (newCliente) {
+        const url = "http://localhost:4000/cliente"
+        console.log(newCliente);
+        const peticion = await fetch(url,{
+            method:'POST',
+            body: JSON.stringify(newCliente),
+            headers: {'Content-Type':'application/json'}
+        })
+        const data = await peticion.json()
+        return data
+    },
+
+    async createPedidoModel (newPedido) {
+        const url = "http://localhost:4000/pedido"
+        console.log(newPedido);
+        const peticion = await fetch(url,{
+            method:'POST',
+            body: JSON.stringify(newPedido),
             headers: {'Content-Type':'application/json'}
         })
         const data = await peticion.json()

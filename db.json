@@ -23,6 +23,11 @@
       },
       "cedula": "0102034567",
       "necesidadEnergetica": "5 kW"
+    },
+    {
+      "id": "0540a272-f033-4cd6-b5a8-fce010f02ad7",
+      "name": "Mateo Bernal",
+      "age": 21
     }
   ],
   "generador": [
@@ -45,6 +50,16 @@
       "precioVenta": 15000,
       "ubicacion": "Bodega Guayaquil",
       "id": "2"
+    },
+    {
+      "id": "b37df705-343b-4e13-882a-1b23b3623749",
+      "modelo": "GNE",
+      "price": 1000
+    },
+    {
+      "id": "891d7803-3787-4060-9067-9cff045d5214",
+      "name": "GneradorEj",
+      "price": 1000
     }
   ],
   "pedido": [
@@ -67,6 +82,12 @@
       "fechaInicio": "2024-11-19",
       "costoTotal": 800,
       "estado": "Finalizado"
+    },
+    {
+      "id": "0c462ec7-dd18-458f-97c0-cf808c97c673",
+      "name": "Generador JR",
+      "Type": "Industrial",
+      "pago": "Pendiente"
     }
   ]
 }

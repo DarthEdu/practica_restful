@@ -22,6 +22,33 @@ const createGeneradorController = async(req, res)=> {
 }
 
 
+const createClienteController = async(req, res)=> {
+    const newClienteData = {
+        id:uuidv4(),
+        ...req.body
+    }
+    try {
+        const cliente = await GeneradorModel.createClienteModel(newClienteData)
+        res.status(201).json(cliente)
+    } catch (error) {
+        res.status(500).json(error)
+    }
+}
+
+const createPedidoController = async(req, res)=> {
+    const newPedidoData = {
+        id:uuidv4(),
+        ...req.body
+    }
+    try {
+        const pedido = await GeneradorModel.createPedidoModel(newPedidoData)
+        res.status(201).json(pedido)
+    } catch (error) {
+        res.status(500).json(error)
+    }
+}
+
+
 const getUserByIDController = async (req, res) => {
     const {id} = req.params
     try {
@@ -126,6 +153,8 @@ export{
     getAllGeneradorController,
     getUserByIDController,
     createGeneradorController,
+    createClienteController,
+    createPedidoController,
     updateUserController,
     updateGeneradorController,
     updatePedidoController,
